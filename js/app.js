@@ -29,7 +29,7 @@ var firstAndPike = {
       // console.log(this.runSum);
 
       this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
-      // console.log(this.cookieSales);
+      console.log(this.cookieSales);
 
     }
     var totalRowElement = document.createElement('li'); //creating <li></li> html tag
@@ -87,10 +87,11 @@ var seattleCenter = {
   maxCustPerHour: 38,
   avgCookiePerSale: 3.7,
   cookieSales: [], // create array to push and store cookieSales values
-  runSum: 0, // create a place holder var to begin running sum
 
   showSales: function(){
     var hourlyTotalsContainer = document.getElementById('hourlyTotalsSeattleCenter');
+
+    var runSum = 0; // create a place holder var to begin running sum
 
     for( var i = 0; i < hoursOpen.length; i++ ) {
 
@@ -102,15 +103,15 @@ var seattleCenter = {
 
       hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
 
-      this.runSum = this.runSum + avgCookiePerHour; // add each new random num to previous random num
+      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
       // console.log(this.runSum);
 
-      this.cookieSales.push(this.runSum); //push each random number to sales array, access last variable of array somehow
+      this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
       // console.log(this.cookieSales);
 
     }
     var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + this.runSum + 'cookies',
+    totalRowElement.textContent = 'Total: ' + runSum + 'cookies',
     hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
     // console.log(this.runSum);
 
@@ -125,10 +126,11 @@ var capitolHill = {
   maxCustPerHour: 38,
   avgCookiePerSale: 2.3,
   cookieSales: [], // create array to push and store cookieSales values
-  runSum: 0, // create a place holder var to begin running sum
 
   showSales: function(){
     var hourlyTotalsContainer = document.getElementById('hourlyTotalsCapitolHill');
+
+    var runSum = 0; // create a place holder var to begin running sum
 
     for( var i = 0; i < hoursOpen.length; i++ ) {
 
@@ -140,15 +142,15 @@ var capitolHill = {
 
       hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
 
-      this.runSum = this.runSum + avgCookiePerHour; // add each new random num to previous random num
+      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
       // console.log(this.runSum);
 
-      this.cookieSales.push(this.runSum); //push each random number to sales array, access last variable of array somehow
+      this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
       // console.log(this.cookieSales);
 
     }
     var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + this.runSum + 'cookies',
+    totalRowElement.textContent = 'Total: ' + runSum + 'cookies',
     hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
     // console.log(this.runSum);
 
@@ -163,10 +165,11 @@ var alki = {
   maxCustPerHour: 16,
   avgCookiePerSale: 4.6,
   cookieSales: [], // create array to push and store cookieSales values
-  runSum: 0, // create a place holder var to begin running sum
 
   showSales: function(){
     var hourlyTotalsContainer = document.getElementById('hourlyTotalsAlki');
+
+    var runSum = 0; // create a place holder var to begin running sum
 
     for( var i = 0; i < hoursOpen.length; i++ ) {
 
@@ -178,15 +181,15 @@ var alki = {
 
       hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
 
-      this.runSum = this.runSum + avgCookiePerHour; // add each new random num to previous random num
+      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
       // console.log(this.runSum);
 
-      this.cookieSales.push(this.runSum); //push each random number to sales array, access last variable of array somehow
+      this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
       // console.log(this.cookieSales);
 
     }
     var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + this.runSum + 'cookies',
+    totalRowElement.textContent = 'Total: ' + runSum + 'cookies',
     hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
     // console.log(this.runSum);
 
