@@ -1,3 +1,33 @@
 body{
   background-color: salmon;
 }
+
+h1{
+  text-align: center;
+}
+
+h3{
+  max-width: 100%;
+}
+
+a{
+  font-size: 20px;
+  margin: 20px 40px;
+}
+
+ul{
+  font-size: 18px;
+}
+
+.salesList{
+  max-width: 100%;
+  float: left;
+  margin: 50px;
+}
+
+img{
+  max-width: 600px;
+  align-content: center;
+  margin: 10% 25%;
+}
+
