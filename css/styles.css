@@ -42,3 +42,6 @@ th{
 td{
   border: 1px solid black;
 }
+tfoot{
+  border: 1px solid black;
+}

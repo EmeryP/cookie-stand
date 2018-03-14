@@ -1,5 +1,8 @@
 'use strict';
 
+//create empty array to push each store info to
+var dailyTotals = [];
+
 //global var with hours open
 var hoursOpen = ['', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
@@ -23,13 +26,16 @@ function cookieStandHours(){
     //append th to table in DOM
     cookieTable.appendChild(thElement);
   }
+  // repeat code from above with new statement to create daily totals column
+  thElement = document.createElement('th');
+  thElement.textContent = 'Daily Totals';
+  cookieTable.appendChild(thElement);
 }
 // call cookieStandHours func
 cookieStandHours();
 
 // ======================================================
-
-//create constructor object shell
+//create constructor object
 function CookieStandSales(minCustPerHour, maxCustPerHour, avgCookiePerSale, location){
 
   // create all dynamic properties
@@ -39,7 +45,11 @@ function CookieStandSales(minCustPerHour, maxCustPerHour, avgCookiePerSale, loca
   this.location = location;
   //empty array to push sales figures into
   this.allCookiesStandSales = [];
-
+  //create day totals
+  this.dailySalesTotals = 0;
+  // push this info to empty array
+  dailyTotals.push(this);
+  console.log(dailyTotals);
 }
 
 // =================================================================
@@ -47,23 +57,20 @@ function CookieStandSales(minCustPerHour, maxCustPerHour, avgCookiePerSale, loca
 //creating function to generate random num and push to empty array
 CookieStandSales.prototype.salesFiguresGenerator = function (){
 
-  // var runSum = 0; // create a place holder var to begin running sum
-  // var runSumArray = [];
-
   for (var i = 0; i < hoursOpen.length - 1; i++) {
 
     var avgCookiePerHour = Math.random() * (this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour;
     avgCookiePerHour = Math.floor(avgCookiePerHour * this.avgCookiePerSale);
 
     this.allCookiesStandSales.push(avgCookiePerHour);
-    // runsum = runSum + avgCookiePerHour;
-    // this.runSumArray.push(runSum);
+
+    this.dailySalesTotals = avgCookiePerHour += this.dailySalesTotals;
+    // console.log(this.dailySalesTotals);
 
   }
 };
-
 // ================================================================
-// 
+
 CookieStandSales.prototype.render = function (){
 
   this.salesFiguresGenerator();
@@ -79,40 +86,73 @@ CookieStandSales.prototype.render = function (){
 
     // //create td
     tdElement = document.createElement('td');
-
     // create td content
     tdElement.textContent = this.allCookiesStandSales[i];
-
     // append td to tr
     trElement.appendChild(tdElement);
   }
 
+  // totals sales for each location for the day
+  tdElement = document.createElement('td');
+  tdElement.textContent = this.dailySalesTotals;
+  trElement.appendChild(tdElement);
   // //append th to table in DOM
-
   cookieTable.appendChild(trElement);
 };
 
 // =======================================================================
 // Total footer
+// CookieStandSales.prototype.render = function (){
+//   function hourlyTotals(){
+
+//     //use for loop to push hours array to table header
+//     for (var i = 0; i < hoursOpen.length; i++) {
+
+//       //create <th>
+//       var tfElement = document.createElement('tf');
+//       // var tdElement = document.createElement('td');
+
+//       //create th content
+//       tfElement.textContent = 'totals'+ '';
+
+//       //append th to table in DOM
+//       cookieTable.appendChild(tfElement);
+//     }
+//     // repeat code from above with new statement to create daily totals column
+//     // thElement = document.createElement('tr');
+//     // thElement.textContent = '';
+//     // cookieTable.appendChild(trElement);
+//   }
+// // };
+// // call hourlytotals
+// hourlyTotals();
 
 // create function to push hourOpen into th
-// function cookieStandHourlyTotals(){
+function cookieStandHourlyTotals(){
 
-//   //use for loop to push hours array to table header
-//   for (var i = 0; i < hoursOpen.length; i++) {
+// CookieStandSales.prototype.render = function (){
 
-//     //create <th>
-//     var tfElement = document.createElement('tfoot');
+//use for loop to push hours array to table header
+  for (var i = 0; i < hoursOpen.length; i++) {
 
-//     //create th content
-//     tfElement.textContent = this.runSumArray[i];
+  //create <th>
+    var trElement = document.createElement('tr');
 
-//     //append th to table in DOM
-//     cookieTable.appendChild(tfElement);
-//   }
-// }
-// // call cookieStandHours func
-// cookieStandHourlyTotals();
+    // var tdElement = document.createElement('td');
+    var tfElement = document.createElement('tfoot');
+
+    //create th content
+    tfElement.textContent = 'totals' + '';
+    trElement.appendChild(tfElement);
+
+  //append th to table in DOM
+
+  }
+
+  cookieTable.appendChild(tfElement);
+}
+// call cookieStandHours func
+cookieStandHourlyTotals();
 
 // =======================================================================
 
