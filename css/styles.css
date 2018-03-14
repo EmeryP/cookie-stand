@@ -1,5 +1,5 @@
 body{
-  background-color: salmon;
+  background-color:rgb(196, 233, 207);
 }
 
 h1{
@@ -20,7 +20,7 @@ ul{
 }
 
 .salesList{
-  max-width: 100%;
+  max-width: 95%;
   float: left;
   margin: 50px;
 }
@@ -31,3 +31,14 @@ img{
   margin: 10% 25%;
 }
 
+table{
+  width: 95%;
+  border: 3px solid black;
+}
+th{
+  border: 1px solid black;
+}
+
+td{
+  border: 1px solid black;
+}

@@ -1,200 +1,134 @@
 'use strict';
 
-var hoursOpen = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
+//global var with hours open
+var hoursOpen = ['', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-// First & Pike
+// we need to access the table that is in the DOM
+var cookieTable = document.getElementById('cookies');
 
-var firstAndPike = {
-  minCustPerHour: 23,
-  maxCustPerHour: 65,
-  avgCookiePerSale: 6.3,
-  cookieSales: [], // create array to push and store cookieSales values
+// =====================================================
 
-  showSales: function(){
-    var hourlyTotalsContainer = document.getElementById('hourlyTotalsPike'); //place here versus inside the loop because I am only using this var once, or only need to find it once, will require less browswer
+// create function to push hourOpen into th
+function cookieStandHours(){
 
-    var runSum = 0; // create a place holder var to begin running sum
+  //use for loop to push hours array to table header
+  for (var i = 0; i < hoursOpen.length; i++) {
 
-    for( var i = 0; i < hoursOpen.length; i++ ) {
+    //create <th>
+    var thElement = document.createElement('th');
 
-      var avgCookiePerHour = Math.random() * (this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour;
-      avgCookiePerHour = Math.floor(avgCookiePerHour * this.avgCookiePerSale);
+    //create th content
+    thElement.textContent = hoursOpen[i];
 
-      var rowElement = document.createElement('li'); //creating <li></li> html tag
-      rowElement.textContent = hoursOpen[i] + avgCookiePerHour + 'cookies'; // store info in a row element, use textContent method
+    //append th to table in DOM
+    cookieTable.appendChild(thElement);
+  }
+}
+// call cookieStandHours func
+cookieStandHours();
 
-      hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
+// ======================================================
 
-      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
-      // console.log(this.runSum);
+//create constructor object shell
+function CookieStandSales(minCustPerHour, maxCustPerHour, avgCookiePerSale, location){
 
-      this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
-      console.log(this.cookieSales);
+  // create all dynamic properties
+  this.minCustPerHour = minCustPerHour;
+  this.maxCustPerHour = maxCustPerHour;
+  this.avgCookiePerSale = avgCookiePerSale;
+  this.location = location;
+  //empty array to push sales figures into
+  this.allCookiesStandSales = [];
 
-    }
-    var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + runSum + 'cookies',
-    hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
-    // console.log(this.runSum);
+}
+
+// =================================================================
+
+//creating function to generate random num and push to empty array
+CookieStandSales.prototype.salesFiguresGenerator = function (){
+
+  // var runSum = 0; // create a place holder var to begin running sum
+  // var runSumArray = [];
+
+  for (var i = 0; i < hoursOpen.length - 1; i++) {
+
+    var avgCookiePerHour = Math.random() * (this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour;
+    avgCookiePerHour = Math.floor(avgCookiePerHour * this.avgCookiePerSale);
+
+    this.allCookiesStandSales.push(avgCookiePerHour);
+    // runsum = runSum + avgCookiePerHour;
+    // this.runSumArray.push(runSum);
 
   }
 };
-firstAndPike.showSales();
 
-// Seatac Airport
+// ================================================================
+// 
+CookieStandSales.prototype.render = function (){
 
-var seatacAirport = {
-  minCustPerHour: 3,
-  maxCustPerHour: 24,
-  avgCookiePerSale: 1.2,
-  cookieSales: [], // create array to push and store cookieSales values
+  this.salesFiguresGenerator();
 
-  showSales: function(){
-    var hourlyTotalsContainer = document.getElementById('hourlyTotalsSeatac');
+  // //create tr
+  var trElement = document.createElement('tr');
 
-    var runSum = 0; // create a place holder var to begin running sum
+  var tdElement = document.createElement('td');
+  tdElement.textContent = this.location;
+  trElement.appendChild(tdElement);
 
-    for( var i = 0; i < hoursOpen.length; i++ ) {
+  for (var i = 0; i < hoursOpen.length - 1; i++) {
 
-      var avgCookiePerHour = Math.random() * (this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour;
-      avgCookiePerHour = Math.floor(avgCookiePerHour * this.avgCookiePerSale);
+    // //create td
+    tdElement = document.createElement('td');
 
-      var rowElement = document.createElement('li'); //creating <li></li> html tag
-      rowElement.textContent = hoursOpen[i] + avgCookiePerHour + 'cookies'; // store info in a row element, use textContent method
+    // create td content
+    tdElement.textContent = this.allCookiesStandSales[i];
 
-      hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
-
-      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
-      // console.log(this.runSum);
-
-      this.cookieSales.push(runSum); //push each random number to sales array
-      // console.log(this.cookieSales);
-
-    }
-    var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + runSum + 'cookies', //content
-    hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
-    // console.log(this.runSum);
-
+    // append td to tr
+    trElement.appendChild(tdElement);
   }
+
+  // //append th to table in DOM
+
+  cookieTable.appendChild(trElement);
 };
-seatacAirport.showSales();
 
-// Seattle Center
+// =======================================================================
+// Total footer
 
-var seattleCenter = {
-  minCustPerHour: 11,
-  maxCustPerHour: 38,
-  avgCookiePerSale: 3.7,
-  cookieSales: [], // create array to push and store cookieSales values
+// create function to push hourOpen into th
+// function cookieStandHourlyTotals(){
 
-  showSales: function(){
-    var hourlyTotalsContainer = document.getElementById('hourlyTotalsSeattleCenter');
+//   //use for loop to push hours array to table header
+//   for (var i = 0; i < hoursOpen.length; i++) {
 
-    var runSum = 0; // create a place holder var to begin running sum
+//     //create <th>
+//     var tfElement = document.createElement('tfoot');
 
-    for( var i = 0; i < hoursOpen.length; i++ ) {
+//     //create th content
+//     tfElement.textContent = this.runSumArray[i];
 
-      var avgCookiePerHour = Math.random() * (this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour;
-      avgCookiePerHour = Math.floor(avgCookiePerHour * this.avgCookiePerSale);
+//     //append th to table in DOM
+//     cookieTable.appendChild(tfElement);
+//   }
+// }
+// // call cookieStandHours func
+// cookieStandHourlyTotals();
 
-      var rowElement = document.createElement('li'); //creating <li></li> html tag
-      rowElement.textContent = hoursOpen[i] + avgCookiePerHour + 'cookies'; // store info in a row element, use textContent method
+// =======================================================================
 
-      hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
+//create var with new location instance for each store
+var firstAndPike = new CookieStandSales(23, 65, 6.3, 'First and Pike');
+var seatacAirport = new CookieStandSales(3, 24, 1.2, 'SeaTac Airport');
+var seattleCenter = new CookieStandSales(11, 38, 3.7, 'Seattle Center');
+var capitolHill = new CookieStandSales(20, 38, 2.3, 'Capitol Hill');
+var alki = new CookieStandSales(2, 16, 4.6, 'Alki');
 
-      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
-      // console.log(this.runSum);
+// call the render method on each var
+firstAndPike.render();
+seatacAirport.render();
+seattleCenter.render();
+capitolHill.render();
+alki.render();
 
-      this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
-      // console.log(this.cookieSales);
-
-    }
-    var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + runSum + 'cookies',
-    hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
-    // console.log(this.runSum);
-
-  }
-};
-seattleCenter.showSales();
-
-// Capitol Hill
-
-var capitolHill = {
-  minCustPerHour: 20,
-  maxCustPerHour: 38,
-  avgCookiePerSale: 2.3,
-  cookieSales: [], // create array to push and store cookieSales values
-
-  showSales: function(){
-    var hourlyTotalsContainer = document.getElementById('hourlyTotalsCapitolHill');
-
-    var runSum = 0; // create a place holder var to begin running sum
-
-    for( var i = 0; i < hoursOpen.length; i++ ) {
-
-      var avgCookiePerHour = Math.random() * (this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour;
-      avgCookiePerHour = Math.floor(avgCookiePerHour * this.avgCookiePerSale);
-
-      var rowElement = document.createElement('li'); //creating <li></li> html tag
-      rowElement.textContent = hoursOpen[i] + avgCookiePerHour + 'cookies'; // store info in a row element, use textContent method
-
-      hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
-
-      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
-      // console.log(this.runSum);
-
-      this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
-      // console.log(this.cookieSales);
-
-    }
-    var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + runSum + 'cookies',
-    hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
-    // console.log(this.runSum);
-
-  }
-};
-capitolHill.showSales();
-
-// Alki
-
-var alki = {
-  minCustPerHour: 2,
-  maxCustPerHour: 16,
-  avgCookiePerSale: 4.6,
-  cookieSales: [], // create array to push and store cookieSales values
-
-  showSales: function(){
-    var hourlyTotalsContainer = document.getElementById('hourlyTotalsAlki');
-
-    var runSum = 0; // create a place holder var to begin running sum
-
-    for( var i = 0; i < hoursOpen.length; i++ ) {
-
-      var avgCookiePerHour = Math.random() * (this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour;
-      avgCookiePerHour = Math.floor(avgCookiePerHour * this.avgCookiePerSale);
-
-      var rowElement = document.createElement('li'); //creating <li></li> html tag
-      rowElement.textContent = hoursOpen[i] + avgCookiePerHour + 'cookies'; // store info in a row element, use textContent method
-
-      hourlyTotalsContainer.appendChild(rowElement); //append row element to cookie container
-
-      runSum = runSum + avgCookiePerHour; // add each new random num to previous random num
-      // console.log(this.runSum);
-
-      this.cookieSales.push(runSum); //push each random number to sales array, access last variable of array somehow
-      // console.log(this.cookieSales);
-
-    }
-    var totalRowElement = document.createElement('li'); //creating <li></li> html tag
-    totalRowElement.textContent = 'Total: ' + runSum + 'cookies',
-    hourlyTotalsContainer.appendChild(totalRowElement); //append runSum to cookie container
-    // console.log(this.runSum);
-
-  }
-};
-alki.showSales();
 
 
