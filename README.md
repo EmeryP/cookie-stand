@@ -2,6 +2,15 @@
 
 
 
+3/14/18 Forms
+*************
+Added footer and totals columns to table, added form with ability to add new store to table. Updated CSS.
+
+3/13/18 Constructor Objects
+***************************
+
+Refactored object literals into constructor objects and output the list data into a table
+
 3/12/18 Pat's Salmon cookies project Initiation:
 ************************************************
 

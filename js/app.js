@@ -83,7 +83,6 @@ CookieStand.prototype.render = function (){
 
   // //create tr
   var trElement = document.createElement('tr');
-
   var tdElement = document.createElement('td');
   tdElement.textContent = this.location;
   trElement.appendChild(tdElement);
@@ -109,7 +108,7 @@ CookieStand.prototype.render = function (){
 //=======================================================================
 // create function to push total hourly sales into the footer row
 function cookieStandHourlyTotals(){
-
+  //create row & data element, content, append
   var trElement = document.createElement('tr');
   var tdElement = document.createElement('td');
   tdElement.textContent = 'Total';
@@ -117,10 +116,9 @@ function cookieStandHourlyTotals(){
 
   //use for loop to push hours array to table header
   for (var i = 0; i < hoursOpen.length; i++) {
-
+    //counter is here to increment the nested loop ++
     var hourlyCounter = 0;
-
-    //nested for loop used iterate through stores array and add value at stores position
+    //nested loop iterates through stores array and add value at stores position
     for (var store = 0; store < storesArray.length; store++) {
       hourlyCounter += storesArray[store].cookieStandSales[i];
     }
@@ -165,7 +163,7 @@ function addNewStore(event){
 //add event listener, listening for event
 storeForm.addEventListener('submit', addNewStore);
 
-//Now we need to call our functions
+//Now we need to call our functions -- in the proper order
 cookieStandHours();
 renderAllStores();
 cookieStandHourlyTotals();
