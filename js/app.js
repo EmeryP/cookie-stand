@@ -28,9 +28,9 @@ function CookieStand(minCustPerHour, maxCustPerHour, avgCookiePerSale, location)
   storesArray.push(this);
 }
 
-// ==========================================================
+// ======================================================
 
-// create function to push hourOpen into th
+// create header row with hours
 function cookieStandHours(){
 
   var thElement = document.createElement('th');
@@ -51,8 +51,6 @@ function cookieStandHours(){
   thElement.textContent = 'Daily Totals';
   cookieTable.appendChild(thElement);
 }
-// call cookieStandHours func
-cookieStandHours();
 
 // ======================================================
 // Create the new store instances
@@ -62,7 +60,7 @@ new CookieStand(11, 38, 3.7, 'Seattle Center');
 new CookieStand(20, 38, 2.3, 'Capitol Hill');
 new CookieStand(2, 16, 4.6, 'Alki');
 
-// =================================================================
+// ======================================================
 
 //creating function to generate random num and push to empty array
 CookieStand.prototype.salesFiguresGenerator = function (){
@@ -75,11 +73,9 @@ CookieStand.prototype.salesFiguresGenerator = function (){
     this.cookieStandSales.push(avgCookiePerHour);
 
     this.dailySalesTotals = avgCookiePerHour += this.dailySalesTotals;
-    // console.log(this.dailySalesTotals);
-
   }
 };
-// ================================================================
+// =====================================================
 
 CookieStand.prototype.render = function (){
 
@@ -110,7 +106,7 @@ CookieStand.prototype.render = function (){
   cookieTable.appendChild(trElement);
 };
 
-// =======================================================================
+//=======================================================================
 // create function to push total hourly sales into the footer row
 function cookieStandHourlyTotals(){
 
@@ -126,36 +122,31 @@ function cookieStandHourlyTotals(){
 
     //nested for loop used iterate through stores array and add value at stores position
     for (var store = 0; store < storesArray.length; store++) {
-
       hourlyCounter += storesArray[store].cookieStandSales[i];
     }
 
     tdElement = document.createElement('td');
-
     //create the content
     tdElement.textContent = hourlyCounter;
-
     trElement.appendChild(tdElement);
   }
   //append th to table in DOM
   cookieTable.appendChild(trElement);
 }
-// call cookieStandHours func
-
 
 // =============================================================
-// ================================================================
-
+// function used to render all store rows with one call
 function renderAllStores(){
   for(var i in storesArray){
     storesArray[i].render();
   }
 }
 
+// =============================================================
+
 //event listeners call back function
 function addNewStore(event){
   event.preventDefault();
-  // console.log(event.target.minCustPerHour.value);
 
   //assigning new value to property assigned to current property
   var newMinCustPerHour = event.target.minCustPerHour.value;
@@ -166,12 +157,15 @@ function addNewStore(event){
   new CookieStand(newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerSale, newLocation);
 
   cookieTable.innerHTML = '';
+  cookieStandHours();
   renderAllStores();
+  cookieStandHourlyTotals();
 }
 
 //add event listener, listening for event
 storeForm.addEventListener('submit', addNewStore);
 
 //Now we need to call our functions
+cookieStandHours();
 renderAllStores();
 cookieStandHourlyTotals();
