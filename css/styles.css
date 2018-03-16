@@ -6,9 +6,14 @@
   margin: 1% 5%;
 }
 
+#headerLogo{
+  max-width: 10%;
+  float: left;
+  margin: .5% 10px;
+}
+
 .topnav {
   background-color: #000;
-  /* overflow: hidden; */
   height: 60px;
   color: white;
   position: fixed;
@@ -65,40 +70,36 @@ a:hover{
 
 img{
   max-width: 100%;
-  /*align-content: center;
-  margin: 10% 25%;*/
 }
 
-#headerLogo{
-  max-width: 10%;
-  float: left;
-  margin: .5% 10px;
-}
-
-table.cookies{
+/* Sales figures table */
+table#cookies{
   width: 95%;
   border: 3px solid black;
-  background: white;
+  background: white; 
   margin: 2% auto;
 }
 
-/* table.cookies tr:first-child{
-  background: #ccc;
-  
-} */
-table.cookies th{
-  border: 1px solid #ccc;
+table#cookies tr:nth-child(odd){
+  background: #f5f5f5;
+}
+table#cookies tr:not(:first-child):hover {
+  background: #000;
+  color: #fff;
+}
+table#cookies th{
+  border: 2px solid #ccc;
+  height: 35px;
+  background-color: #f5f5f5;
+  font-weight: bold;
 }
 
-table.cookies td{
+table#cookies td{
   border: 1px solid #ccc;
   padding: .5rem 1.5rem;
 }
-/* table.cookies tr{
-  border: 1px solid black;
-} */
-/* 
-.salesPage{
-  z-index: 5;
-} */
+table#cookies tr{
+  /* border: 1px solid black; */
+}
+
 
