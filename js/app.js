@@ -34,8 +34,7 @@ function CookieStand(minCustPerHour, maxCustPerHour, avgCookiePerSale, location)
 function cookieStandHours(){
 
   var thElement = document.createElement('th');
-  var tdElement = document.createElement('td');
-  tdElement.textContent = '1';
+  thElement.textContent = 'Locations';
   cookieTable.appendChild(thElement);
 
   //use for loop to push hours array to table header

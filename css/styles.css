@@ -27,19 +27,15 @@ body{
   /* margin-top: 60px; */
 }
 
-#landingPage{
+#homePageImg{
   margin-top: 60px;
  }
-
-/* #salesPageBackground{
-  background-image: url('img/coffee shop.jpg');
-  background-attachment: fixed;
-} */
 
 h1{
   text-align: center;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 25px;
+  color: white;
 }
 
 h2{
@@ -73,6 +69,15 @@ img{
 }
 
 /* Sales figures table */
+#salesPageImg{
+  background-image: url('../img/woodgrain.jpg');
+  background-attachment: fixed;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
 table#cookies{
   width: 95%;
   border: 3px solid black;
@@ -83,10 +88,12 @@ table#cookies{
 table#cookies tr:nth-child(odd){
   background: #f5f5f5;
 }
+
 table#cookies tr:not(:first-child):hover {
   background: #000;
   color: #fff;
 }
+
 table#cookies th{
   border: 2px solid #ccc;
   height: 35px;
@@ -98,8 +105,6 @@ table#cookies td{
   border: 1px solid #ccc;
   padding: .5rem 1.5rem;
 }
-table#cookies tr{
-  /* border: 1px solid black; */
-}
+
 
 
