@@ -25,3 +25,5 @@ This app is built to project daily sales projections for Pat's Salmon Cookies wh
 Sources Referenced:
 
 https://www.mdn.com 
+
+https://unsplash.com/photos/vPdaqOmU9LU

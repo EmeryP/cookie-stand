@@ -2,28 +2,39 @@
 .topnav {
   background-color: #000;
   /* overflow: hidden; */
-  height: 50px;
+  height: 60px;
   color: white;
   position: fixed;
 }
 
 body{
   background-color: #C8BFC3; 
-  max-width: 100%;
+  /* max-width: 100%; */
   /* margin: 0 auto; */
+  /* margin-top: 60px; */
 }
 
 
 h1{
   text-align: center;
   font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25px;
+}
+
+h2{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  float: left;
+  font-size: 50px;
+  margin: 15% 20% 90%;
+  position: absolute;
 }
 
 #headerName{
   font-family: 'Roboto Condensed', sans-serif;
   color: white;
   float: left;
-  margin: .5% 5%;
+  margin: 1% 5%;
 }
 
 h3{
@@ -56,6 +67,7 @@ img{
 #headerLogo{
   max-width: 10%;
   float: left;
+  margin: .5% 10px;
 }
 
 table{
@@ -71,4 +83,9 @@ td{
 }
 tfoot{
   border: 1px solid black;
+}
+
+#landingPage{
+ margin-top: 60px;
+ z-index: 0;
 }
