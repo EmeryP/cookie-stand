@@ -25,7 +25,7 @@ function CookieStand(minCustPerHour, maxCustPerHour, avgCookiePerSale, location)
   this.cookieStandSales = [];
   //create day totals counter value
   this.dailySalesTotals = 0;
-  storesArray.push(this);
+  storesArray.unshift(this);
 }
 
 // ======================================================
@@ -34,8 +34,7 @@ function CookieStand(minCustPerHour, maxCustPerHour, avgCookiePerSale, location)
 function cookieStandHours(){
 
   var thElement = document.createElement('th');
-  var tdElement = document.createElement('td');
-  tdElement.textContent = '1';
+  thElement.textContent = 'Locations';
   cookieTable.appendChild(thElement);
 
   //use for loop to push hours array to table header
@@ -76,7 +75,7 @@ CookieStand.prototype.salesFiguresGenerator = function (){
   }
 };
 // =====================================================
-
+//render method defined here
 CookieStand.prototype.render = function (){
 
   this.salesFiguresGenerator();
@@ -114,6 +113,8 @@ function cookieStandHourlyTotals(){
   tdElement.textContent = 'Total';
   trElement.appendChild(tdElement);
 
+  var grandTotal = 0;
+
   //use for loop to push hours array to table header
   for (var i = 0; i < hoursOpen.length; i++) {
     //counter is here to increment the nested loop ++
@@ -127,7 +128,15 @@ function cookieStandHourlyTotals(){
     //create the content
     tdElement.textContent = hourlyCounter;
     trElement.appendChild(tdElement);
+    grandTotal = hourlyCounter += grandTotal;
+
+
   }
+  // calculates and appends grand total to table
+  tdElement = document.createElement('td');
+  tdElement.textContent = grandTotal;
+  trElement.appendChild(tdElement);
+  console.log(grandTotal);
   //append th to table in DOM
   cookieTable.appendChild(trElement);
 }
@@ -144,23 +153,26 @@ function renderAllStores(){
 
 //event listeners call back function
 function addNewStore(event){
+  // prevents page from refreshing upon event
   event.preventDefault();
 
-  //assigning new value to property assigned to current property
+  //assigning new value to property assigned to current property; (target) is the form; minCustPerHour is set in HTML input tag;
   var newMinCustPerHour = event.target.minCustPerHour.value;
   var newMaxCustPerHour = event.target.maxCustPerHour.value;
   var newAvgCookiePerSale = event.target.avgCookiePerSale.value;
   var newLocation = event.target.location.value;
 
+  // make new instance by passing in new arguements
   new CookieStand(newMinCustPerHour, newMaxCustPerHour, newAvgCookiePerSale, newLocation);
 
+  //replaces table with empty string or resets to how it was before it was rendered
   cookieTable.innerHTML = '';
   cookieStandHours();
   renderAllStores();
   cookieStandHourlyTotals();
 }
 
-//add event listener, listening for event
+//add event listener, listening for event, put at bottom for code readability
 storeForm.addEventListener('submit', addNewStore);
 
 //Now we need to call our functions -- in the proper order

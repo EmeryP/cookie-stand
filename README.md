@@ -1,6 +1,8 @@
 # cookie-stand
 
+3/15/18
 
+added reset.css, added grand total feature to table, updated public facing css
 
 3/14/18 Forms
 *************
@@ -23,3 +25,5 @@ This app is built to project daily sales projections for Pat's Salmon Cookies wh
 Sources Referenced:
 
 https://www.mdn.com 
+
+https://unsplash.com/photos/vPdaqOmU9LU
