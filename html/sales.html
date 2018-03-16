@@ -5,6 +5,8 @@
     <title>Pat's Salmon Cookies</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
   </head>
   <body>
       <img src="../img/woodgrain.jpg" alt"coffee img" id="salesPageImg">
@@ -19,19 +21,27 @@
       <fieldset>
         <legend>Add a New Store</legend>
 
-        <label for="minCustPerHour">Min Cust Per Hour</label>
-        <input type="number" name="minCustPerHour">
-
-        <label for="maxCustPerHour">Max Cust Per Hour</label>
-        <input type="number" name="maxCustPerHour">
-
-        <label for="avgCookiePerSale">Avg Cookie Per Sale</label>
-        <input type="number" name="avgCookiePerSale">
-
-        <label for="location">Location</label>
-        <input type="text" name="location">
-
-        <button>Add a Store</button>
+        <ul>
+          <li>
+            <label for="minCustPerHour">Min Cust Per Hour</label>
+            <input type="number" name="minCustPerHour" id="salesFigures">
+          </li>
+          <li>
+            <label for="maxCustPerHour">Max Cust Per Hour</label>
+            <input type="number" name="maxCustPerHour" id="salesFigures">
+          </li>
+          <li>
+            <label for="avgCookiePerSale">Avg Cookie Per Sale</label>
+            <input type="number" name="avgCookiePerSale" id="salesFigures">
+          </li>
+          <li>
+            <label for="location">Location</label>
+            <input type="text" name="location" id="salesFigures">
+          </li>
+          <li>
+            <button>Add Store</button>
+          </li>
+      </ul>
 
       </fieldset>
     </form>

@@ -106,5 +106,30 @@ table#cookies td{
   padding: .5rem 1.5rem;
 }
 
+form#storeForm{
+  color: white;
+  font-family: 'Crete Round', serif;
+  max-width: 20%;
+  margin: 2% 40%;
+}
+input#salesFigures{
+  max-width: 80px;
+}
+
+li{
+  float: right;
+  margin: 15px;
+}
+
+legend{
+  text-align: center;
+  font-size: 25px;
+}
+
+button{
+  /* border-radius: 5px; add picture to button*/ 
+  background-color: green;
+}
+
 
 
