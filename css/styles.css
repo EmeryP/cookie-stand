@@ -1,10 +1,18 @@
 
+#headerName{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  float: left;
+  margin: 1% 5%;
+}
+
 .topnav {
   background-color: #000;
   /* overflow: hidden; */
   height: 60px;
   color: white;
   position: fixed;
+  z-index: 5;
 }
 
 body{
@@ -14,6 +22,15 @@ body{
   /* margin-top: 60px; */
 }
 
+#landingPage{
+  margin-top: 60px;
+ }
+
+#salesPageBackground{
+  z-index: 0;
+  background-image: url('img/coffee shop.jpg');
+  background-attachment: fixed;
+}
 
 h1{
   text-align: center;
@@ -26,15 +43,8 @@ h2{
   color: white;
   float: left;
   font-size: 50px;
-  margin: 15% 20% 90%;
+  margin: 10% 20% 90%;
   position: absolute;
-}
-
-#headerName{
-  font-family: 'Roboto Condensed', sans-serif;
-  color: white;
-  float: left;
-  margin: 1% 5%;
 }
 
 h3{
@@ -54,10 +64,6 @@ a:hover{
   color: red;
 }
 
-ul{
-  font-size: 18px;
-}
-
 img{
   max-width: 100%;
   /*align-content: center;
@@ -70,22 +76,31 @@ img{
   margin: .5% 10px;
 }
 
-table{
+table.cookies{
   width: 95%;
   border: 3px solid black;
-}
-th{
-  border: 1px solid black;
-}
-
-td{
-  border: 1px solid black;
-}
-tfoot{
-  border: 1px solid black;
+  background: white;
+  margin: 2% auto;
+  z-index: 5;
 }
 
-#landingPage{
- margin-top: 60px;
- z-index: 0;
+/* table.cookies tr:first-child{
+  background: #ccc;
+  
+} */
+table.cookies th{
+  border: 1px solid #ccc;
 }
+
+table.cookies td{
+  border: 1px solid #ccc;
+  padding: .5rem 1.5rem;
+}
+/* table.cookies tr{
+  border: 1px solid black;
+} */
+
+#storeForm{
+  z-index: 5;
+}
+
