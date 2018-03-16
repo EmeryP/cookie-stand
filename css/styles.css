@@ -26,11 +26,10 @@ body{
   margin-top: 60px;
  }
 
-#salesPageBackground{
-  z-index: 0;
+/* #salesPageBackground{
   background-image: url('img/coffee shop.jpg');
   background-attachment: fixed;
-}
+} */
 
 h1{
   text-align: center;
@@ -81,7 +80,6 @@ table.cookies{
   border: 3px solid black;
   background: white;
   margin: 2% auto;
-  z-index: 5;
 }
 
 /* table.cookies tr:first-child{
@@ -99,8 +97,8 @@ table.cookies td{
 /* table.cookies tr{
   border: 1px solid black;
 } */
-
-#storeForm{
+/* 
+.salesPage{
   z-index: 5;
-}
+} */
 

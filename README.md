@@ -2,7 +2,7 @@
 
 3/15/18
 
-added reset.css
+added reset.css, added grand total feature to table, updated css
 
 3/14/18 Forms
 *************
