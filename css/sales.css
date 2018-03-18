@@ -1,0 +1,75 @@
+body{
+    background-image: url(../img/woodgrain.jpg);
+    
+}
+
+/* Sales figures table */
+#salesPageImg{
+  
+  background-attachment: fixed;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+table#cookies{
+  width: 95%;
+  border: 3px solid black;
+  background: white; 
+  margin: 2% auto;
+}
+
+table#cookies tr:nth-child(odd){
+  background: #f5f5f5;
+}
+
+table#cookies tr:not(:first-child):hover {
+  background: #000;
+  color: #fff;
+}
+
+table#cookies th{
+  border: 2px solid #ccc;
+  height: 35px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+table#cookies td{
+  border: 1px solid #ccc;
+  padding: .5rem 1.5rem;
+}
+
+form#storeForm{
+  color: white;
+  font-family: 'Crete Round', serif;
+  max-width: 20%;
+  margin: 2% 40%;
+}
+input#salesFigures{
+  max-width: 80px;
+}
+
+li{
+  float: right;
+  margin: 15px;
+}
+
+legend{
+  text-align: center;
+  font-size: 25px;
+}
+
+button{
+  /* border-radius: 5px; add picture to button*/ 
+  background-color: green;
+}
+
+
+nav ul li{
+  display: inline-block;
+}
+
+
+

@@ -136,7 +136,7 @@ function cookieStandHourlyTotals(){
   tdElement = document.createElement('td');
   tdElement.textContent = grandTotal;
   trElement.appendChild(tdElement);
-  console.log(grandTotal);
+  // console.log(grandTotal);
   //append th to table in DOM
   cookieTable.appendChild(trElement);
 }
