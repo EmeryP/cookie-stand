@@ -46,6 +46,7 @@ form#storeForm{
   max-width: 20%;
   margin: 2% 40%;
 }
+
 input#salesFigures{
   max-width: 80px;
 }
@@ -76,10 +77,6 @@ button:hover{
   background-color: green;
 }
 
-
-/* nav ul li{
-  display: inline-block;
-} */
 
 
 
