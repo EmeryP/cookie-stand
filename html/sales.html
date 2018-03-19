@@ -1,65 +1,74 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Salmon Cookie Sales Breakdown</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/sales.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
-  </head>
-  <body>
-      <header>
-          <div class="topnav">
-            <div id="headerLogo">
-              <a href="../index.html"><img src="../img/salmon.png" alt="salmon picture"></a>
-            </div>
-                <h1>Salmon Cookie Sales Breakdown</h1>
-              <nav>
-                <ul>
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="#products">Products</a></li>         
-                  <li><a href="#about">About</a></li>
-                  <li><a href="html/sales.html">Sales</a></li>
-                </ul>
-              </nav>
-          </div>   
-      </header>
-      <!-- <img src="../img/woodgrain.jpg" alt"coffee img" id="salesPageImg"> -->
 
-    <table id="cookies"></table>
+<head>
+  <title>Salmon Cookie Sales Breakdown</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/sales.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+</head>
 
-    <form id="storeForm">
-      <fieldset>
-        <legend>Add a New Store</legend>
-
+<body>
+  <header>
+    <div id="headernav">
+      <div id="logo">
+        <a href="../index.html">
+          <img src="../img/salmon.png">
+        </a>
+      </div>
+      <h1>Salmon Cookie Sales Breakdown</h1>
+      <nav>
         <ul>
           <li>
-            <label for="minCustPerHour">Min Cust Per Hour</label>
-            <input type="number" name="minCustPerHour" id="salesFigures">
+            <a class="active" href="../index.html">Home</a>
           </li>
           <li>
-            <label for="maxCustPerHour">Max Cust Per Hour</label>
-            <input type="number" name="maxCustPerHour" id="salesFigures">
+            <a class="active" href="#products">Products</a>
           </li>
           <li>
-            <label for="avgCookiePerSale">Avg Cookie Per Sale</label>
-            <input type="number" name="avgCookiePerSale" id="salesFigures">
+            <a href="#about">About</a>
           </li>
           <li>
-            <label for="location">Location</label>
-            <input type="text" name="location" id="salesFigures">
+            <a href="#">Sales</a>
           </li>
-          <li>
-            <button>Add Store</button>
-          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <table id="cookies"></table>
+
+  <form id="storeForm">
+    <fieldset>
+      <legend>Add a New Store</legend>
+      <ul>
+        <li>
+          <label for="minCustPerHour">Min Cust Per Hour</label>
+          <input type="number" name="minCustPerHour" id="salesFigures">
+        </li>
+        <li>
+          <label for="maxCustPerHour">Max Cust Per Hour</label>
+          <input type="number" name="maxCustPerHour" id="salesFigures">
+        </li>
+        <li>
+          <label for="avgCookiePerSale">Avg Cookie Per Sale</label>
+          <input type="number" name="avgCookiePerSale" id="salesFigures">
+        </li>
+        <li>
+          <label for="location">Location</label>
+          <input type="text" name="location" id="salesFigures">
+        </li>
+        <li>
+          <button>Add Store</button>
+        </li>
       </ul>
+    </fieldset>
+  </form>
 
-      </fieldset>
-    </form>
-    
-    <script src="../js/app.js"></script>
-  </body>
+  <script src="../js/app.js"></script>
+</body>
+
 </html>
-
