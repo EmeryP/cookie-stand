@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-/* #hero{
-  background-image: url(../img/coffee shop.jpg);
-} */
-
 body{
   width: 100%;
   margin: 0 auto;
@@ -21,10 +17,6 @@ header{
   height: 90px;
 }
 
-/* #headernav{
-  max-width: 960px;
-  margin: 0 auto;
-} */
 header img {
   float: left;
   max-width: 10%;
@@ -62,8 +54,6 @@ header h1{
   line-height: 70px;
 }
 
-
-
 #homeImg{
   width: 100%;
   z-index: -1;
@@ -71,15 +61,69 @@ header h1{
 }
 
 #homemoto{
-  width:50%;
-  font-family: 'Roboto Condensed', sans-serif;
-  color: red;
+  width:100%;
+  font-family: 'Permanent Marker', cursive;
+  color: #f44250;
   float: right;
   font-size: 50px;
-  /* margin: 10% 51% 50% */
-  /* position: absolute; */
-  float: left;
-  z-index: 1;
+  margin: 10% -5%;
+  text-decoration: underline;
+}
+
+div.card{
+  max-width: 300px;
+  height: 375px;
+  overflow: hidden;
+  background-color: salmon;
+  color: white;
+  font-family: 'Crete Round', serif;
+  font-size: 18px;
+  border: 5px solid black;
+}
+
+main ul li{
+  display: inline-block;
+  padding: 5%;
+}
+
+#productcard{
+  max-width: 300px;
+}
+
+main h3{
+  text-align: center;
+  color: black;
+  font-size: 25px;
+}
+
+main p{
+  text-align: center;
+  margin-top: 5%;
+}
+
+#productcard{
+   width: 500px;
+   max-height: 200px;
+}
+
+#productshomemoto{
+  width:100%;
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  float: right;
+  font-size: 50px;
+  margin: 10% -5%;
+  text-decoration: underline;
+}
+
+.cardfamily{
+  max-width: 500px;
+  background-color: salmon;
+  color: white;
+  font-family: 'Crete Round', serif;
+  font-size: 18px;
+  border: 5px solid black;
+  margin: 0px 50%;
 }
 
 

@@ -1,6 +1,11 @@
 # cookie-stand
 
+3/18/18
+*********************************
+added css styling. Added about and products page
+
 3/15/18
+********************************
 
 added reset.css, added grand total feature to table, updated public facing css
 
