@@ -1,8 +1,7 @@
-body{
-    background-image: url(../img/woodgrain.jpg);
-    
-}
 
+body{
+  overflow: scroll;
+}
 /* Sales figures table */
 #salesPageImg{
   background-attachment: fixed;
@@ -41,14 +40,17 @@ table#cookies td{
 }
 
 form#storeForm{
-  color: white;
+  background: white;
+  border: 3px solid salmon;
+  color: black;
   font-family: 'Crete Round', serif;
-  max-width: 20%;
   margin: 2% 40%;
+  width: 300px;
 }
 
 input#salesFigures{
-  max-width: 80px;
+  height: 30px;
+  max-width: 100px;
 }
 
 fieldset li{
@@ -57,24 +59,24 @@ fieldset li{
 }
 
 legend{
-  text-align: center;
   font-size: 25px;
+  text-align: center;
 }
 
 button {
   background-color: #000;
   border: none;
   color: white;
+  display: inline-block;
+  font-size: 16px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
 
 button:hover{
+  background-color: salmon;
   transition-duration: 0.35s;
-  background-color: green;
 }
 
 

@@ -80,7 +80,7 @@ CookieStand.prototype.render = function (){
 
   this.salesFiguresGenerator();
 
-  // //create tr
+  //create tr
   var trElement = document.createElement('tr');
   var tdElement = document.createElement('td');
   tdElement.textContent = this.location;
@@ -88,7 +88,7 @@ CookieStand.prototype.render = function (){
 
   for (var i = 0; i < hoursOpen.length; i++) {
 
-    // //create td
+    //create td
     tdElement = document.createElement('td');
     // create td content
     tdElement.textContent = this.cookieStandSales[i];
@@ -100,7 +100,7 @@ CookieStand.prototype.render = function (){
   tdElement = document.createElement('td');
   tdElement.textContent = this.dailySalesTotals;
   trElement.appendChild(tdElement);
-  // //append th to table in DOM
+  //append th to table in DOM
   cookieTable.appendChild(trElement);
 };
 
