@@ -1,12 +1,12 @@
-# cookie-stand
+# Cookie-Stand
+The salmon cookies webpage was created to track sales figures for a local cookie store startup called Pat's Salmon Cookies.
 
+### Getting Started
+* Fork and clone this repo to your local machine
+* From your cmd line, run `open index.html` to view the website in your browser
 
-Sources Referenced:
-
-https://www.mdn.com 
-
-https://unsplash.com/photos/vPdaqOmU9LU
-
-https://meyerweb.com/eric/tools/css/reset/ 
-
-https://css-tricks.com/ 
+### Resources
+* https://www.mdn.com 
+* https://unsplash.com/photos/vPdaqOmU9LU
+* https://meyerweb.com/eric/tools/css/reset/ 
+* https://css-tricks.com/ 
